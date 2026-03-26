@@ -41,19 +41,19 @@ const PROJECTS = {
   gamedesign: [
     {
       id: 'gd-01',
-      title: 'Echoes of the Vault',
-      desc: 'Roguelite dungeon crawler — full GDD & prototype.',
-      longDesc: 'A turn-based roguelite with an asymmetric memory mechanic: the dungeon remembers your previous runs. Wrote full GDD, designed enemy AI behaviour trees, balanced progression curves. Prototyped in Godot 4.',
+      title: 'Nanoba',
+      desc: 'Board game.',
+      longDesc: 'A board game made by team Electronic Paysam during the GGJ-2026. A game with the story set in a future on a spaceship with limited resources, and communities must reach their individual goals to win.',
       image: '',
       tag: 'game design',
-      tools: ['Godot 4', 'Figma', 'Google Docs'],
+      tools: ['Paper-Pen Sketch', 'Obsidian', 'Figma', 'Krita'],
       link: ''
     },
     {
       id: 'gd-02',
-      title: 'Paperweight — Puzzle Mechanic',
-      desc: 'Paper-folding physics puzzle concept.',
-      longDesc: 'Explored the design space of folding paper as a core mechanic. Designed 12 escalating puzzle levels, documented edge cases, and tested with 5 playtesters. Presented as a 20-page design doc.',
+      title: 'Mandates of Leakage',
+      desc: 'A game about peeing.',
+      longDesc: 'Mandates of Leakage is a game that was built as part of Electronic Paysam during the JAMPackd GameJam 2025. Its a game about how a city tries to erase markers of migrant laborers, which then causes the players as laborers to do actions which erase the identity of the city.',
       image: '',
       tag: 'game design',
       tools: ['Unity', 'Miro', 'Notion'],
@@ -61,45 +61,22 @@ const PROJECTS = {
     },
     {
       id: 'gd-03',
-      title: 'Saltmarsh — Level Design',
-      desc: 'Environment & encounter layout for a 2D platformer.',
-      longDesc: 'Designed the Saltmarsh biome for a student game project — grey-box layout, encounter pacing, environmental storytelling beats, and prop placement. Used a design pillar of "curiosity over challenge".',
+      title: 'The Inks are Changing Hues',
+      desc: 'VR experience putting the player in the position of a pen doctor.',
+      longDesc: 'Built as part of Electronic Paysam, a VR simulation in which the player is put in the role of a pen doctor in 1960s Thrissur, a period when the political landscape of Kerala was changing.',
       image: '',
       tag: 'game design',
       tools: ['Tiled', 'Unity', 'Miro'],
       link: ''
     },
-  ],
-
-  gameart: [
     {
-      id: 'ga-01',
-      title: 'Pixel Tileset — Overgrown Ruins',
-      desc: '16×16 modular tileset with 4 biome variants.',
-      longDesc: 'Full modular tileset: ground, wall, decoration, and transition tiles. Designed at 16×16px with a limited 12-colour palette. Includes animated water tiles and crumbling walls.',
+      id: 'gd-04',
+      title: 'The Cook,The Crook and The Camera',
+      desc: 'A security guard watches as his coworked cooks food in a mall, whilst burglars break in.',
+      longDesc: 'Made using Three.js and plane geometries stacked to resemble a diorama, the player plays as a security guard obsessed with food, and must decide between having his coworker cook food in the mall kitchen, or catch the burglars who broke into the mall.',
       image: '',
-      tag: 'game art',
-      tools: ['Aseprite', 'Photoshop'],
-      link: ''
-    },
-    {
-      id: 'ga-02',
-      title: 'UI Kit — Fantasy HUD',
-      desc: 'Parchment-style HUD elements for an RPG.',
-      longDesc: 'Complete UI system: health & stamina bars, inventory grid, dialogue box, and map frame. All assets vectored in Illustrator then textured in Photoshop to feel hand-made.',
-      image: '',
-      tag: 'game art',
-      tools: ['Illustrator', 'Photoshop'],
-      link: ''
-    },
-    {
-      id: 'ga-03',
-      title: 'Character Sprite — "Cinder"',
-      desc: 'Full sprite sheet with 8-directional walk + attacks.',
-      longDesc: 'Pixel art character sprite at 32×32px. Includes idle, walk (8 directions), 2 attack animations, hurt, and death. Drew each frame in Aseprite with a warm fire-wizard colour palette.',
-      image: '',
-      tag: 'game art',
-      tools: ['Aseprite'],
+      tag: 'game design',
+      tools: ['Tiled', 'Unity', 'Miro'],
       link: ''
     },
   ],
