@@ -10,7 +10,7 @@
 let inkLevel    = 0;
 let inkRewarded = false;
 const MAX_INK   = 100;
-const SECTIONS  = ['home','animation','gamedesign','gameart','illustration','about'];
+const SECTIONS  = ['home','animation','gamedesign','illustration','about'];
 
 // ---- FOOTER YEAR ----
 const fyEl = document.getElementById('footer-year');
