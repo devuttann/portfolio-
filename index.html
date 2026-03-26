@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sketchbook — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- p5.js canvas is injected here by sketch.js -->
+  <div id="canvas-container"></div>
+
+  <!-- Eraser wipe transition overlay -->
+  <div id="eraser-wipe" aria-hidden="true"></div>
+
+  <!-- HTML overlay rendered on top of canvas -->
+  <div id="overlay">
+
+    <nav id="main-nav">
+      <span class="nav-logo" onclick="switchSection('home')" style="cursor:none;">✏ my sketchbook.</span>
+
+      <!-- Desktop nav -->
+      <div class="nav-links" id="nav-links-desktop">
+        <button class="nav-btn active" data-section="home">home</button>
+        <button class="nav-btn" data-section="animation">animation</button>
+        <button class="nav-btn" data-section="gamedesign">game design</button>
+        <button class="nav-btn" data-section="gameart">game art</button>
+        <button class="nav-btn" data-section="illustration">illustration</button>
+        <button class="nav-btn" data-section="about">about</button>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile drawer -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <button class="nav-btn mobile" data-section="home">home</button>
+      <button class="nav-btn mobile" data-section="animation">animation</button>
+      <button class="nav-btn mobile" data-section="gamedesign">game design</button>
+      <button class="nav-btn mobile" data-section="gameart">game art</button>
+      <button class="nav-btn mobile" data-section="illustration">illustration</button>
+      <button class="nav-btn mobile" data-section="about">about</button>
+    </div>
+
+    <main id="main-content">
+
+      <!-- HOME -->
+      <section id="section-home" class="section active">
+        <div class="hero-layout">
+          <div class="hero-text">
+            <p class="hero-eyebrow">— open to work ✦</p>
+            <h1 class="hero-title">Hi, I make<br/><span class="hero-accent">things move</span><br/>&amp; worlds exist.</h1>
+            <p class="hero-sub">Animation · Game Design · Game Art · Illustration</p>
+            <div class="hero-cta-row">
+              <button class="btn-primary" onclick="switchSection('animation')">see my work ↓</button>
+              <button class="btn-ghost" onclick="switchSection('about')">about me</button>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="doodle-hint">← drag cursor anywhere to draw</div>
+            <div class="stamp-tip">right-click to stamp ✦</div>
+            <div class="stamp-tip" style="margin-top:0.4rem;">press <kbd>C</kbd> to clear canvas</div>
+            <div class="stamp-tip">keys <kbd>1</kbd>–<kbd>6</kbd> to navigate</div>
+          </div>
+        </div>
+
+        <div class="ink-meter-wrap">
+          <span class="ink-label">ink level</span>
+          <div class="ink-track">
+            <div class="ink-fill" id="ink-fill"></div>
+          </div>
+          <span class="ink-reward-hint" id="ink-hint">draw to fill it up!</span>
+        </div>
+      </section>
+
+      <!-- ANIMATION -->
+      <section id="section-animation" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Animation</h2>
+          <p class="section-desc">2D character, motion graphics &amp; frame-by-frame work.</p>
+        </div>
+        <div class="projects-grid" id="grid-animation"></div>
+      </section>
+
+      <!-- GAME DESIGN -->
+      <section id="section-gamedesign" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Game Design</h2>
+          <p class="section-desc">Systems, mechanics, level design &amp; game docs.</p>
+        </div>
+        <div class="projects-grid" id="grid-gamedesign"></div>
+      </section>
+
+      <!-- GAME ART -->
+      <section id="section-gameart" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Game Art</h2>
+          <p class="section-desc">Sprites, tilesets, UI &amp; environment concepts.</p>
+        </div>
+        <div class="projects-grid" id="grid-gameart"></div>
+      </section>
+
+      <!-- ILLUSTRATION -->
+      <section id="section-illustration" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Illustration</h2>
+          <p class="section-desc">Editorial, personal &amp; experimental pieces.</p>
+        </div>
+        <div class="projects-grid" id="grid-illustration"></div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="section-about" class="section">
+        <div class="about-layout">
+          <div class="about-card sketch-card">
+            <div class="about-avatar-zone">
+              <div class="avatar-placeholder">( your face here )</div>
+            </div>
+            <div class="about-text">
+              <h2 class="about-name">Your Name Here</h2>
+              <p class="about-tagline">animator · game designer · illustrator · chaos gremlin</p>
+              <p class="about-bio">
+                I'm a [city]-based artist who loves making characters feel alive and worlds feel real.
+                Currently at [school / studio]. Always looking for collabs, freelance work, and people who appreciate a good sketch.
+              </p>
+              <div class="about-links">
+                <a href="#" class="about-link">✉ email</a>
+                <a href="#" class="about-link">⬡ artstation</a>
+                <a href="#" class="about-link">▶ youtube</a>
+                <a href="#" class="about-link">◎ instagram</a>
+              </div>
+            </div>
+          </div>
+          <div class="skills-card sketch-card">
+            <h3 class="skills-title">tools &amp; skills</h3>
+            <div class="skills-list" id="skills-list"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+      <div class="footer-inner">
+        <span class="footer-name">Your Name — <span id="footer-year"></span></span>
+        <span class="footer-divider">·</span>
+        <a href="#" class="footer-link">✉ email</a>
+        <a href="#" class="footer-link">⬡ artstation</a>
+        <a href="#" class="footer-link">◎ instagram</a>
+        <span class="footer-divider">·</span>
+        <button class="footer-clear-btn" id="clear-canvas-btn" title="Clear pencil drawing (C)">
+          ⌫ clear canvas
+        </button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-card sketch-card">
+      <button class="modal-close" id="modal-close">✕ close</button>
+      <div class="modal-inner" id="modal-inner"></div>
+    </div>
+  </div>
+
+  <!-- GAMIFICATION: stamp burst + ink reward -->
+  <div id="stamp-burst" class="stamp-burst"></div>
+  <div id="ink-reward" class="ink-reward" style="display:none;">
+    <span>✦ ink tank full — nice scribbling!</span>
+  </div>
+
+  <!-- Card hover spark canvas (tiny, positioned by JS) -->
+  <canvas id="spark-canvas" style="position:fixed;inset:0;pointer-events:none;z-index:50;width:100%;height:100%;"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+  <script src="projects.js"></script>
+  <script src="ui.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
